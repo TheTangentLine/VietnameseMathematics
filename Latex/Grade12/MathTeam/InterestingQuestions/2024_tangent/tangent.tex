@@ -1,0 +1,91 @@
+% Opening packages ---------------------------------
+
+\documentclass[12pt, a4paper]{article}
+\parindent 0px
+\parskip=10pt
+\usepackage[utf8]{vietnam}
+\usepackage[left=1.20cm, right=1.20cm, top=1.50cm, bottom=1.50cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{mathpazo}
+\usepackage{wrapfig}
+
+% Bắt đầu đề---------------------------------------
+
+\begin{document}
+	
+\textbf{[HSG Toán 12 TP.HCM / Đợt 2 / 2023  2024]} Cho hàm số $y=x+\dfrac{1}{x}$ $(x>0)$ có đồ thị $(C)$. Tìm tập hợp các điểm trong mặt phẳng mà từ đó có thể kẻ đúng hai tiếp tuyến đến $(C)$ sao cho đường thẳng nối hai tiếp điểm luôn đi qua điểm $I(1;1)$.
+\begin{center}
+\textbf{Bài giải} 
+
+\textit{(Lời giải tham khảo: Trương Minh Kha)}
+\end{center}
+Gọi: $ M(a, b)$ là điểm thỏa yêu cầu bài toán và $ N\left(x_0; x_0 + \dfrac{1}{x_0}\right) $ là tiếp điểm của phương trình tiếp tuyến $ \left( \Delta_N \right) $ với đường cong $ (C) $.
+Do đó, hệ số góc của phương trình $(\Delta_N)$ có dạng:   $$ (\Delta_N):  y'(x_0) = 1 - \dfrac{1}{x_0^2} $$
+Nên phương trình tiếp tuyến $ (\Delta_N) $ của $ (C) $ tại các tiếp điểm $ N $ có dạng: $$ y = \left(1 - \dfrac{1}{x_0^2} \right) (x - x_0) + x_0 + \dfrac{1}{x_0} $$
+Thay điểm $ M(a;b) $ vào đường thẳng $ (\Delta) $, khi đó: $$ b = \left(1 - \dfrac{1}{x_0^2} \right)(a - x_0) + x_0 + \dfrac{1}{x_0}$$
+Đơn giản và rút gọn phương trình trên, ta được phương trình bậc $ 2 $ theo ẩn $ x_0 $ như sau:
+\begin{equation}\label{E:1}
+ (b - a)x_0^2 -2x_0 + a = 0 
+\end{equation}
+Để thỏa mãn từ điểm $ M $ vẽ được hai tiếp tuyến đến $ (C) $, ta cần để $(1)$ có $ 2 $ nghiệm phân biệt dương, như thế ta cần phải thỏa đồng thời các điều kiện sau:
+
+\begin{minipage}{0.5\textwidth}  
+\begin{flushright}
+	$
+	\begin{cases}
+	    \Delta' = 1 - a(b - a) > 0 \\
+	    S = x_1 + x_2 = \dfrac{2}{b - a} > 0  \\
+	    P = x_1 . x_2 = \dfrac{a}{b - a} > 0
+	\end{cases}
+	$
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	$
+	\iff
+	\begin{cases}
+	    a^2 - ab + 1 > 0 \\
+	    b > a > 0  \\
+	\end{cases}
+	$
+\end{minipage}
+
+Đồng thời, ta cũng gọi thêm $A \left( x_A; x_A + \dfrac{1}{x_A} \right) $ và $ B \left( x_B; x_B + \dfrac{1}{x_B} \right) $ là hai nghiệm của $ (1) $.
+
+Gọi $ (d) $ là đường thẳng nối hai điểm $A$ và $B$, khi đó $\overrightarrow{AB} $ sẽ là vector chỉ phương của $ (d) $: $$ \overrightarrow{AB} = \left(x_B - x_A; (x_B - x_A) + \left(\dfrac{1}{x_A} - \dfrac{1}{x_B} \right) \right) = \left(1; 1 - \dfrac{1}{x_A.x_B}\right) (x_B - x_A ) = \left(1;\dfrac{2a - b}{a}\right)(x_B - x_A)$$
+Khi đó $(d)$ sẽ có 1 vector pháp tuyến là $ \vec{n} = \left( \dfrac{2a - b}{a}; -1\right) (*) $ 
+
+\pagebreak
+
+Tiếp theo, để viết được phương trình đường thẳng $(d)$ hoàn chỉnh, ta cần thêm dữ kiện về điểm đi qua của đường thẳng, do đó ta sẽ gọi thêm điểm $ K(x_K, y_K) $ là trung điểm của đoạn thẳng $ AB $, khi đó tọa độ của $ K $ sẽ là: 
+
+\begin{minipage}{0.5\textwidth}  
+\begin{flushright}
+	$
+	\begin{cases}
+	    x_K = \dfrac{x_A + x_B}{2} = \dfrac{1}{b - a} \\
+	    y_K = \dfrac{x_A + x_B}{2} + \dfrac{x_A + x_B}{2x_A.x_B} = \dfrac{1}{b - a} + \dfrac{1}{a}
+	\end{cases}
+	$
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	$
+	\iff
+		K\left(\dfrac{1}{b - a}; \dfrac{1}{b - a} + \dfrac{1}{a} \right) (**)
+	$
+\end{minipage}
+
+Từ dữ kiện $ (*) $ và $ (**) $, ta sẽ viết được phương trình đường thẳng $ (d) $ như sau: $$(d): \left( \dfrac{2a - b}{a} \right) \left(x - \dfrac{1}{b - a}\right) - \left(y - \dfrac{1}{b - a} - \dfrac{1}{a} \right) = 0 $$
+Vì $ (d) $ luôn đi qua điểm $I(1;1)$, nên ta thế tọa độ điểm $ I $ vào $ (d) $, khi ấy: $$(d): \left( \dfrac{2a - b}{a} \right) \left(1 - \dfrac{1}{b - a}\right) - \left(1 - \dfrac{1}{b - a} - \dfrac{1}{a} \right) = 0 $$
+Thu gọn phương trình và kết hợp với điều kiện trên, ta sẽ được mối liên hệ giữa $ a $ và $ b $: $$ b = a + 2  \left(0 < a < \dfrac{1}{2} \right)$$
+Vậy tập hợp các điểm M là quỹ tích các điểm nằm trên đoạn thẳng $ \, y = x + 2 \left( 0 < x < \dfrac{1}{2} \right) $.
+
+\end{document}
